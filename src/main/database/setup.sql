@@ -7,6 +7,6 @@ create table users(
                       profile_image VARCHAR(50),
                       birthday date not null,
                       registration_date timestamp not null DEFAULT now(),
-                      role VARCHAR(15) not null,
+                      role VARCHAR(15) not null DEFAULT 'USER',
                       check (role in ('USER', 'ADMIN'))
 );

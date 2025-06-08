@@ -33,8 +33,8 @@ public class UserDao implements Dao<Integer, User> {
             WHERE email = ?
             """;
     private static final String SAVE_SQL = """
-            INSERT INTO users(first_name, last_name, email, password, profile_image, birthday, role)
-            VALUES(?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO users(first_name, last_name, email, password, profile_image, birthday)
+            VALUES(?, ?, ?, ?, ?, ?)
             """;
 
     @SneakyThrows
@@ -107,7 +107,6 @@ public class UserDao implements Dao<Integer, User> {
             preparedStatement.setString(4, entity.getPassword());
             preparedStatement.setString(5, entity.getProfileImage());
             preparedStatement.setDate(6, Date.valueOf(entity.getBirthday()));
-            preparedStatement.setString(7, entity.getRole().name());
 
             preparedStatement.executeUpdate();
             var resultSet = preparedStatement.getGeneratedKeys();

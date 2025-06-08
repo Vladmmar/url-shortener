@@ -11,7 +11,6 @@ import static lombok.AccessLevel.PRIVATE;
 @NoArgsConstructor(access=PRIVATE)
 public class CreateUserDtoMapper {
 
-    private static final String IMAGE_FOLDER = "users/profile-pictures";
     private static final CreateUserDtoMapper INSTANCE = new CreateUserDtoMapper();
 
     public User mapFrom(CreateUserDto o) {
@@ -20,7 +19,7 @@ public class CreateUserDtoMapper {
                 .lastName(o.getLastName())
                 .email(o.getEmail())
                 .password(HashUtil.hashpw(o.getPassword()))
-                .profileImage(IMAGE_FOLDER + o.getProfileImage().getSubmittedFileName())
+                .profileImage(o.getProfileImage().getSubmittedFileName())
                 .birthday(LocalDateFormatter.format(o.getBirthday()))
                 .build();
     }

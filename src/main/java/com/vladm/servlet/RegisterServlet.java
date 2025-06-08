@@ -4,6 +4,7 @@ import com.vladm.JspHelper;
 import com.vladm.dto.CreateUserDto;
 import com.vladm.service.UserService;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/register")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024)
 public class RegisterServlet extends HttpServlet {
 
     private final UserService userService = UserService.getInstance();

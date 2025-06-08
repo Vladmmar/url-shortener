@@ -23,7 +23,7 @@ public class CreateUserValidator {
         }
 
         // validate user's email
-        if (EmailValidator.isValid(userDto.getEmail())) {
+        if (!EmailValidator.isValid(userDto.getEmail())) {
             validationResult.add(INVALID_EMAIL);
         }
 
