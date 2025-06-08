@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="redirect-service:war-archive">
+    <output-path>$PROJECT_DIR$/out/artifacts/redirect_service_war_archive</output-path>
+    <root id="archive" name="redirect-service_war-archive.war">
+      <element id="artifact" artifact-name="redirect-service:Web exploded" />
+    </root>
+  </artifact>
+</component>
